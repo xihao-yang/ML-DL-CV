@@ -1,0 +1,58 @@
+[
+  {
+    "name": "landscape",
+    "title": "Landscape with mountains and vegetation",
+    "clean": "data\\clean\\landscape_clean.png",
+    "hazy": "data\\input\\landscape_hazy.png",
+    "depth": "data\\depth\\landscape_depth.png",
+    "beta": 1.45,
+    "airlight": [
+      0.92,
+      0.95,
+      1.0
+    ],
+    "expected": "Works well because vegetation and shadows provide dark pixels inside most local patches."
+  },
+  {
+    "name": "cityscape",
+    "title": "Cityscape with buildings and road",
+    "clean": "data\\clean\\cityscape_clean.png",
+    "hazy": "data\\input\\cityscape_hazy.png",
+    "depth": "data\\depth\\cityscape_depth.png",
+    "beta": 1.35,
+    "airlight": [
+      0.91,
+      0.94,
+      0.98
+    ],
+    "expected": "Works reasonably well on buildings and road; sky remains a weak region."
+  },
+  {
+    "name": "indoor",
+    "title": "Indoor room with window and furniture",
+    "clean": "data\\clean\\indoor_clean.png",
+    "hazy": "data\\input\\indoor_hazy.png",
+    "depth": "data\\depth\\indoor_depth.png",
+    "beta": 1.05,
+    "airlight": [
+      0.94,
+      0.93,
+      0.9
+    ],
+    "expected": "Mixed result because indoor haze and lighting do not match the outdoor atmospheric model."
+  },
+  {
+    "name": "bright_regions",
+    "title": "Scene dominated by white clouds, snow, and bright walls",
+    "clean": "data\\clean\\bright_regions_clean.png",
+    "hazy": "data\\input\\bright_regions_hazy.png",
+    "depth": "data\\depth\\bright_regions_depth.png",
+    "beta": 1.55,
+    "airlight": [
+      0.96,
+      0.98,
+      1.0
+    ],
+    "expected": "Failure case because white regions naturally have no dark channel even when haze-free."
+  }
+]

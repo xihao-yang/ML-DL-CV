@@ -1,0 +1,92 @@
+{
+  "config": {
+    "patch_size": 15,
+    "omega": 0.95,
+    "top_percent": 0.001,
+    "transmission_floor": 0.1,
+    "guided_radius": 35,
+    "guided_eps": 0.001
+  },
+  "results": [
+    {
+      "name": "landscape",
+      "title": "Landscape with mountains and vegetation",
+      "hazy_psnr": 12.18,
+      "dcp_psnr": 17.35,
+      "psnr_delta": 5.17,
+      "hazy_mae": 0.2178,
+      "dcp_mae": 0.1127,
+      "estimated_airlight": [
+        0.816,
+        0.894,
+        0.98
+      ],
+      "mean_transmission": 0.286,
+      "comparison": "output\\comparisons\\landscape_comparison.png",
+      "dehazed": "output\\images\\landscape_dcp.png",
+      "dark_channel": "output\\images\\landscape_dark_channel.png",
+      "transmission": "output\\images\\landscape_transmission.png",
+      "expected": "Works well because vegetation and shadows provide dark pixels inside most local patches."
+    },
+    {
+      "name": "cityscape",
+      "title": "Cityscape with buildings and road",
+      "hazy_psnr": 11.99,
+      "dcp_psnr": 16.79,
+      "psnr_delta": 4.8,
+      "hazy_mae": 0.2116,
+      "dcp_mae": 0.1234,
+      "estimated_airlight": [
+        0.91,
+        0.929,
+        0.925
+      ],
+      "mean_transmission": 0.287,
+      "comparison": "output\\comparisons\\cityscape_comparison.png",
+      "dehazed": "output\\images\\cityscape_dcp.png",
+      "dark_channel": "output\\images\\cityscape_dark_channel.png",
+      "transmission": "output\\images\\cityscape_transmission.png",
+      "expected": "Works reasonably well on buildings and road; sky remains a weak region."
+    },
+    {
+      "name": "indoor",
+      "title": "Indoor room with window and furniture",
+      "hazy_psnr": 20.24,
+      "dcp_psnr": 11.5,
+      "psnr_delta": -8.74,
+      "hazy_mae": 0.0861,
+      "dcp_mae": 0.2397,
+      "estimated_airlight": [
+        0.918,
+        0.929,
+        0.925
+      ],
+      "mean_transmission": 0.376,
+      "comparison": "output\\comparisons\\indoor_comparison.png",
+      "dehazed": "output\\images\\indoor_dcp.png",
+      "dark_channel": "output\\images\\indoor_dark_channel.png",
+      "transmission": "output\\images\\indoor_transmission.png",
+      "expected": "Mixed result because indoor haze and lighting do not match the outdoor atmospheric model."
+    },
+    {
+      "name": "bright_regions",
+      "title": "Scene dominated by white clouds, snow, and bright walls",
+      "hazy_psnr": 30.73,
+      "dcp_psnr": 18.93,
+      "psnr_delta": -11.8,
+      "hazy_mae": 0.0225,
+      "dcp_mae": 0.0819,
+      "estimated_airlight": [
+        0.965,
+        0.98,
+        0.992
+      ],
+      "mean_transmission": 0.07,
+      "comparison": "output\\comparisons\\bright_regions_comparison.png",
+      "dehazed": "output\\images\\bright_regions_dcp.png",
+      "dark_channel": "output\\images\\bright_regions_dark_channel.png",
+      "transmission": "output\\images\\bright_regions_transmission.png",
+      "expected": "Failure case because white regions naturally have no dark channel even when haze-free."
+    }
+  ]
+}
